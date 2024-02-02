@@ -1,0 +1,35 @@
+{%extends 'cakeapp/base.html'%}
+
+{%block body_block%}
+
+<div class="container mt-5 d-flex flex-column align-items-center">
+    <div class="border border-light p-5 custom-shadow top-space">
+         <form action="" method="post">
+             {%csrf_token%}
+             {{form.as_p}}
+             <input type="submit" value="add" class="form-control btn btn-outline-light">
+         </form>
+    </div>
+    <div>
+     <table class="table mt-5 table border border shadow width ">
+         <tr>
+             <td>Name</td>
+             <td>Active</td>
+             <td class="text-center">Action</td>
+         </tr>
+         {%for cat in categories%}
+         <tr>
+             <td>{{cat.name}}</td>
+             <td>{{cat.is_active}}</td>
+             <td>
+                 <a href="{%url 'active-category' cat.id%}" class="me-4 ms-4"><i class="fa-regular fa-thumbs-up"></i></a>
+                 <a href="{%url 'remove-category' cat.id%}" ><i class="fa-regular fa-thumbs-down"></i></a>
+             </td>
+         </tr>
+         {%endfor%}
+     </table>
+    </div>
+ </div>
+
+
+{%endblock%}

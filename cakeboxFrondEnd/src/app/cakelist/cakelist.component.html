@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 3.5rem;">
+    <div class="container">
+        <h1 class="text-white text-center">Cakes Available</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-2 mt-4 font">
+            <div class="col" style="width: 19rem;" *ngFor="let c of cakes">
+                <div class="card" style="width: 250px; height: 310px;"  [routerLink]="['/cakes',c.id]">
+                    <img src="{{ c.image }}" class="card-img-top" alt="no-image" height="200vh">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bolder">{{ c.name }}</h5>
+                        <p class="card-text">{{ c.category }}</p>
+                        <p class="card-text mb-0">{{ c.description }}</p>   
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .card:hover{
+        scale: 1.01;
+    }
+</style>

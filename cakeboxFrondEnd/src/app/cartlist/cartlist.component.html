@@ -1,0 +1,20 @@
+<div class="container" style="margin-top: 3.5rem;">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-2 mt-4 font">
+            <div class="col" style="width: 19rem;" *ngFor="let c of carts">
+                <div class="card" style="width: 250px; height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bolder">{{ c.cakevarient }}</h5>
+                        <p class="card-text">status: {{ c.status }}</p>
+                        <p class="card-text mb-0">{{ c.date }}</p>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .card:hover{
+        scale: 1.01;
+    }
+</style>
